@@ -26,17 +26,17 @@ const lora = Lora({
 export const metadata: Metadata = {
   metadataBase: new URL("https://andersnovak.com"),
   title: {
-    default: "Anders Novak",
-    template: "%s — Anders Novak",
+    default: "Kometh Tauch",
+    template: "%s — Kometh Tauch",
   },
   description:
-    "Mathematics, statistics and markets. Code for statistical inference, and a weekly note on what the market appears to be pricing.",
+    "Kometh Tauch — BSc Data Science with Industrial Placement, University of Bristol.",
   alternates: {
     types: { "application/rss+xml": "/rss.xml" },
   },
   openGraph: {
     type: "website",
-    siteName: "Anders Novak",
+    siteName: "Kometh Tauch",
     locale: "en_GB",
   },
 };
