@@ -18,7 +18,7 @@ export default function ProjectsPage() {
             Projects
           </h1>
           <p className="max-w-[52ch] text-ink/70 text-pretty">
-            Eleven public repositories, mostly estimation and inference problems
+            Six public repositories, mostly estimation and inference problems
             that came out of coursework or the desk. Each has a written README;
             several have a short paper.
           </p>
