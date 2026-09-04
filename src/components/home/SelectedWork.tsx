@@ -13,7 +13,8 @@ export function SelectedWork() {
             href="/projects"
             className="border-b border-transparent pb-0.5 text-note text-inherit no-underline transition-colors hover:border-accent hover:text-accent-700"
           >
-            All {projects.length} repositories →
+            All {projects.length}{" "}
+            {projects.length === 1 ? "repository" : "repositories"} →
           </Link>
         }
       >
