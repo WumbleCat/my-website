@@ -7,9 +7,12 @@ type Variant = "primary" | "secondary" | "ghost";
 /* Actions are outlined, never filled — the primary is an accent hairline on
    transparent. Hover and pressed states are accent tints one step apart, per
    the system's interaction rules. */
+/* The border *colour* belongs to the variant, never to the base: Tailwind
+   emits .border-transparent after .border-accent, so a transparent default
+   here would silently win and strip the outline off every button. */
 const base =
   "inline-flex cursor-pointer items-center justify-center gap-1.5 rounded-md " +
-  "border border-transparent font-heading text-[14px] leading-tight font-semibold " +
+  "border font-heading text-[14px] leading-tight font-semibold " +
   "no-underline transition-colors disabled:cursor-not-allowed disabled:opacity-45";
 
 const padding = "px-[16.6px] py-(--space-2)";
@@ -17,7 +20,8 @@ const padding = "px-[16.6px] py-(--space-2)";
 const variants: Record<Variant, string> = {
   primary: "text-accent border-accent hover:bg-accent/12 active:bg-accent/22",
   secondary: "text-ink border-rule hover:bg-ink/7 active:bg-ink/14",
-  ghost: "text-accent px-(--space-1) hover:bg-accent/10 active:bg-accent/18",
+  ghost:
+    "text-accent border-transparent px-(--space-1) hover:bg-accent/10 active:bg-accent/18",
 };
 
 type BaseProps = {
