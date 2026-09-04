@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SubscribeForm } from "@/components/home/SubscribeForm";
 import { PageShell } from "@/components/layout/PageShell";
-import { notesByYear } from "@/data/notes";
+import { notes, notesByYear } from "@/data/notes";
 import { shortDate } from "@/lib/date";
 
 export const metadata: Metadata = {
   title: "The weekly note",
-  description:
-    "Sunday evenings since March. One question a week, worked through with whatever data is public.",
+  description: "A weekly note. Nothing published yet.",
 };
 
 export default function NotesPage() {
@@ -20,25 +18,26 @@ export default function NotesPage() {
             The weekly note
           </h1>
           <p className="max-w-[52ch] text-ink/70 text-pretty">
-            Sunday evenings since March. One question a week, worked through
-            with whatever data is public. Occasionally I am wrong in writing,
-            which is the point of writing it down.
+            One question a week, written down before the answer is known.
           </p>
         </div>
 
-        <div className="flex flex-col gap-2.5 border-l border-rule pl-6">
-          <SubscribeForm layout="stack" />
-          <div className="text-caption text-ink/50">
-            <Link
-              href="/rss.xml"
-              className="text-inherit no-underline hover:text-accent-700"
-            >
-              RSS
-            </Link>{" "}
-            also available.
-          </div>
+        <div className="border-l border-rule pl-6 text-caption text-ink/50">
+          <Link
+            href="/rss.xml"
+            className="text-inherit no-underline hover:text-accent-700"
+          >
+            RSS
+          </Link>{" "}
+          available.
         </div>
       </section>
+
+      {notes.length === 0 && (
+        <p className="m-0 border-t border-rule py-10 text-detail text-ink/55">
+          Nothing published yet.
+        </p>
+      )}
 
       {notesByYear().map(({ year, items }) => (
         <div

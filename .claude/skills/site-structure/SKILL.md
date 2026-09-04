@@ -54,11 +54,10 @@ without a written body degrade to its masthead instead of breaking.
 ## Server by default
 
 Everything is a server component unless it genuinely needs the browser. Only
-three things are `"use client"` today, and each earns it:
+two things are `"use client"` today, and each earns it:
 
 - `NavLink` — reads `usePathname()` for the active section.
 - `ProjectFilters` — holds the chosen facet in `useState`.
-- `SubscribeForm` — holds field and submitted state.
 
 Before adding `"use client"`, check whether the state is really **location**.
 The imported design held all seven views in one `view` field; here they are
@@ -68,7 +67,7 @@ before reaching for state.
 ## Adding things
 
 **A repository.** Append to `src/data/projects.ts`. The index, the home page's
-featured three and `generateStaticParams` all pick it up. Give it prose by
+featured three (or fewer) and `generateStaticParams` all pick it up. Give it prose by
 adding a branch to `ProjectArticle`; without one it renders masthead-only,
 which is fine.
 
