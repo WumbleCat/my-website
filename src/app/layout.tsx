@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   },
   description:
     "Mathematics, statistics and markets. Code for statistical inference, and a weekly note on what the market appears to be pricing.",
+  alternates: {
+    types: { "application/rss+xml": "/rss.xml" },
+  },
   openGraph: {
     type: "website",
     siteName: "Anders Novak",
