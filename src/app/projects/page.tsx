@@ -5,8 +5,7 @@ import { projects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description:
-    "Public repositories, mostly estimation and inference problems that came out of coursework or the desk.",
+  description: "Public repositories on GitHub.",
 };
 
 export default function ProjectsPage() {
@@ -18,9 +17,7 @@ export default function ProjectsPage() {
             Projects
           </h1>
           <p className="max-w-[52ch] text-ink/70 text-pretty">
-            Six public repositories, mostly estimation and inference problems
-            that came out of coursework or the desk. Each has a written README;
-            several have a short paper.
+            Public repositories, each with a written README.
           </p>
         </div>
 
@@ -31,11 +28,11 @@ export default function ProjectsPage() {
           </div>
           <div className="flex justify-between">
             <dt>Primary language</dt>
-            <dd className="m-0">Python</dd>
+            <dd className="m-0">{projects[0].lang}</dd>
           </div>
           <div className="flex justify-between">
             <dt>Last push</dt>
-            <dd className="tnum m-0">2 days ago</dd>
+            <dd className="tnum m-0">{projects[0].updated}</dd>
           </div>
         </dl>
       </section>

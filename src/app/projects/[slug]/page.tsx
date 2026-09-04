@@ -5,7 +5,6 @@ import { ProjectArticle } from "@/components/projects/ProjectArticle";
 import { BackLink } from "@/components/ui/BackLink";
 import { Button } from "@/components/ui/Button";
 import { Kicker } from "@/components/ui/Kicker";
-import { TextLink } from "@/components/ui/TextLink";
 import { getProject, projects } from "@/data/projects";
 
 export function generateStaticParams() {
@@ -21,21 +20,6 @@ export async function generateMetadata({
   return { title: project.name, description: project.blurb };
 }
 
-const reading = [
-  {
-    href: "https://doi.org/10.1080/01621459.1999.10474153",
-    label: "Pitt & Shephard (1999)",
-  },
-  {
-    href: "https://doi.org/10.1111/1467-937X.00050",
-    label: "Kim, Shephard & Chib (1998)",
-  },
-  {
-    href: "https://doi.org/10.1111/j.1467-9868.2009.00736.x",
-    label: "Andrieu et al. (2010)",
-  },
-];
-
 export default async function ProjectPage({
   params,
 }: PageProps<"/projects/[slug]">) {
@@ -45,7 +29,6 @@ export default async function ProjectPage({
 
   const details = [
     { label: "Language", value: project.lang },
-    { label: "Licence", value: "MIT" },
     { label: "Stars", value: project.stars },
     { label: "Updated", value: project.updated },
   ];
@@ -65,14 +48,8 @@ export default async function ProjectPage({
           {project.blurb}
         </p>
         <div className="flex flex-wrap gap-2.5">
-          <Button
-            variant="primary"
-            href={`https://github.com/anovak/${project.slug}`}
-          >
+          <Button variant="primary" href={project.repo}>
             View on GitHub
-          </Button>
-          <Button href={`/papers/${project.slug}.pdf`}>
-            Read the note (PDF)
           </Button>
         </div>
       </section>
@@ -94,21 +71,6 @@ export default async function ProjectPage({
               ))}
             </dl>
           </div>
-
-          {project.slug === "state-space-vol" && (
-            <div>
-              <div className="mb-2 text-micro tracking-eyebrow text-ink/50 uppercase">
-                Reading
-              </div>
-              <div className="flex flex-col items-start gap-[7px]">
-                {reading.map((ref) => (
-                  <TextLink key={ref.label} href={ref.href}>
-                    {ref.label}
-                  </TextLink>
-                ))}
-              </div>
-            </div>
-          )}
         </aside>
       </div>
     </PageShell>
