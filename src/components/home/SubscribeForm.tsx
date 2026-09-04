@@ -35,7 +35,7 @@ export function SubscribeForm({ layout = "row", className }: Props) {
     <form
       className={cn(
         layout === "row"
-          ? "flex flex-wrap items-center gap-2.5"
+          ? "flex w-full flex-wrap items-center gap-2.5 sm:w-auto"
           : "flex flex-col gap-2.5",
         className,
       )}
@@ -55,7 +55,7 @@ export function SubscribeForm({ layout = "row", className }: Props) {
         placeholder="you@domain.com"
         value={email}
         onChange={(event) => setEmail(event.target.value)}
-        className={layout === "row" ? "w-[250px]" : undefined}
+        className={layout === "row" ? "w-full sm:w-[250px]" : undefined}
       />
       <Button
         type="submit"

@@ -22,7 +22,10 @@ export function ProjectArticle({ slug }: { slug: string }) {
   if (slug !== "state-space-vol") return null;
 
   return (
-    <article className="text-[15.5px]/[1.75]">
+    // min-w-0: as a grid item the article defaults to min-width:auto, which
+    // lets the code block's longest line widen the whole track and push the
+    // page sideways on narrow viewports. Zeroing it lets the pre scroll instead.
+    <article className="min-w-0 text-[15.5px]/[1.75]">
       <h2 className={heading}>Why</h2>
       <p className={para}>
         Stochastic volatility models are easy to write down and awkward to
