@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SubscribeForm } from "@/components/home/SubscribeForm";
 import { PageShell } from "@/components/layout/PageShell";
 import { notesByYear } from "@/data/notes";
 import { shortDate } from "@/lib/date";
@@ -26,17 +25,14 @@ export default function NotesPage() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-2.5 border-l border-rule pl-6">
-          <SubscribeForm layout="stack" />
-          <div className="text-caption text-ink/50">
-            <Link
-              href="/rss.xml"
-              className="text-inherit no-underline hover:text-accent-700"
-            >
-              RSS
-            </Link>{" "}
-            also available.
-          </div>
+        <div className="border-l border-rule pl-6 text-detail text-ink/62">
+          <Link
+            href="/rss.xml"
+            className="text-inherit no-underline hover:text-accent-700"
+          >
+            RSS
+          </Link>{" "}
+          feed available.
         </div>
       </section>
 

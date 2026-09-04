@@ -2,7 +2,6 @@ import Link from "next/link";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { recentNotes } from "@/data/notes";
 import { shortDate } from "@/lib/date";
-import { SubscribeForm } from "./SubscribeForm";
 
 export function WeeklyNote() {
   return (
@@ -48,18 +47,6 @@ export function WeeklyNote() {
             </div>
           </Link>
         ))}
-      </div>
-
-      <div className="mt-10 flex flex-wrap items-center gap-7 rounded-md border border-rule px-7 py-[26px]">
-        <div className="min-w-60 flex-1">
-          <div className="mb-1 font-heading text-[19px] font-semibold">
-            Have it by email
-          </div>
-          <div className="text-detail text-ink/60">
-            One message a week. Nothing else, ever.
-          </div>
-        </div>
-        <SubscribeForm />
       </div>
     </section>
   );
