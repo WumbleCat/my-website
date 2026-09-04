@@ -19,7 +19,7 @@ export function SiteHeader() {
           href="/"
           className="mr-auto font-heading text-[19px] font-semibold tracking-[-0.01em] text-inherit no-underline transition-colors hover:text-accent-700"
         >
-          A. Novak
+          K. Tauch
         </Link>
         {sections.map((section) => (
           <NavLink key={section.href} href={section.href}>

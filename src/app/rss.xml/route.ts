@@ -37,7 +37,6 @@ export function GET() {
     <atom:link href="${site.url}/rss.xml" rel="self" type="application/rss+xml" />
     <description>${escape(site.description)}</description>
     <language>en-GB</language>
-    <managingEditor>${escape(site.author)}</managingEditor>
 ${items}
   </channel>
 </rss>

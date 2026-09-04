@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Lora } from "next/font/google";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { site } from "@/lib/site";
 import "./globals.css";
 
 /* Cormorant Garamond for headings over Lora for body — the classical
@@ -24,19 +25,18 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://andersnovak.com"),
+  metadataBase: new URL(site.url),
   title: {
-    default: "Anders Novak",
-    template: "%s — Anders Novak",
+    default: site.name,
+    template: `%s — ${site.name}`,
   },
-  description:
-    "Mathematics, statistics and markets. Code for statistical inference, and a weekly note on what the market appears to be pricing.",
+  description: site.description,
   alternates: {
     types: { "application/rss+xml": "/rss.xml" },
   },
   openGraph: {
     type: "website",
-    siteName: "Anders Novak",
+    siteName: site.name,
     locale: "en_GB",
   },
 };

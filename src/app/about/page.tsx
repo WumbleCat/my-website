@@ -6,7 +6,7 @@ import { Rule } from "@/components/ui/Rule";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Mathematics and computer science at Cambridge, after two years on a systematic equities research desk.",
+    "Kometh Tauch. BSc Data Science with Industrial Placement at the University of Bristol.",
 };
 
 const cv = [
@@ -14,67 +14,9 @@ const cv = [
     heading: "Education",
     rows: [
       {
-        when: "2024 — 2027",
-        what: "MMath / BA, Mathematics with Computer Science",
-        detail:
-          "University of Cambridge. Part III options in statistical inference, stochastic calculus, and machine learning theory.",
-      },
-      {
-        when: "2018 — 2021",
-        what: "BSc Mathematics",
-        detail:
-          "University of Warwick. Dissertation on empirical processes for dependent data.",
-      },
-    ],
-  },
-  {
-    heading: "Experience",
-    rows: [
-      {
-        when: "2022 — 2024",
-        what: "Quantitative Researcher",
-        detail:
-          "Systematic equities, medium frequency. Signal research, and the maintenance of the internal risk model.",
-      },
-      {
-        when: "Summer 2021",
-        what: "Research Intern",
-        detail:
-          "Volatility arbitrage desk. Built the calibration harness that later became state-space-vol.",
-      },
-    ],
-  },
-  {
-    heading: "Writing",
-    rows: [
-      {
-        when: "Weekly",
-        what: "The weekly note",
-        detail:
-          "Twenty-four issues since March 2026. Roughly a thousand subscribers, none of whom pay.",
-      },
-      {
-        when: "2023",
-        what: "Shrinkage estimators under regime change",
-        detail:
-          "Working paper, with two co-authors. Never submitted; the referee in my head won.",
-      },
-    ],
-  },
-  {
-    heading: "Tools",
-    rows: [
-      {
-        when: "Daily",
-        what: "Python, Rust, SQL",
-        detail:
-          "NumPy, JAX, polars, scikit-learn. Rust when the loop is the problem.",
-      },
-      {
-        when: "Occasionally",
-        what: "R, Stan, LaTeX",
-        detail:
-          "Stan for anything hierarchical that deserves a proper posterior.",
+        when: "Current",
+        what: "BSc Data Science with Industrial Placement",
+        detail: "University of Bristol.",
       },
     ],
   },
@@ -90,18 +32,13 @@ export default function AboutPage() {
 
         <div className="grid items-start gap-10 md:grid-cols-2 lg:grid-cols-[1fr_1fr_260px]">
           <p className="m-0 text-justify hyphens-auto text-[15px]/[1.75] text-ink/82">
-            I read mathematics and computer science, finishing next spring.
-            Before that I spent two years on a systematic equities research
-            desk, mostly building and breaking signals in the medium-frequency
-            bucket, and a year of that maintaining the risk model everyone
-            complained about.
+            I am Kometh Tauch, studying for a BSc in Data Science with
+            Industrial Placement at the University of Bristol, and based in
+            Bristol.
           </p>
           <p className="m-0 text-justify hyphens-auto text-[15px]/[1.75] text-ink/82">
-            I left because the interesting questions had started to look
-            statistical rather than financial, and I wanted the time to do them
-            properly. The projects here are the residue of that. The weekly note
-            is the part of the desk habit I did not want to lose: an argument,
-            written down, before the outcome is known.
+            The projects here are public repositories from coursework and
+            elsewhere. The weekly note has not started yet.
           </p>
           <Plate className="grid aspect-4/5 place-items-center p-4 text-center text-caption text-ink/45 max-lg:max-w-[260px]">
             Portrait
