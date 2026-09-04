@@ -6,8 +6,7 @@ import { shortDate } from "@/lib/date";
 
 export const metadata: Metadata = {
   title: "The weekly note",
-  description:
-    "Sunday evenings since March. One question a week, worked through with whatever data is public.",
+  description: "Occasional notes from Kometh Tauch. Nothing published yet.",
 };
 
 export default function NotesPage() {
@@ -19,9 +18,8 @@ export default function NotesPage() {
             The weekly note
           </h1>
           <p className="max-w-[52ch] text-ink/70 text-pretty">
-            Sunday evenings since March. One question a week, worked through
-            with whatever data is public. Occasionally I am wrong in writing,
-            which is the point of writing it down.
+            Nothing published yet. The first note will appear here when it is
+            written.
           </p>
         </div>
 
@@ -35,6 +33,12 @@ export default function NotesPage() {
           feed available.
         </div>
       </section>
+
+      {notesByYear().length === 0 && (
+        <p className="m-0 border-t border-rule py-10 text-detail text-ink/55">
+          The archive is empty.
+        </p>
+      )}
 
       {notesByYear().map(({ year, items }) => (
         <div
